@@ -10,8 +10,9 @@ double str_to_double(char num[]){
     return ans;
 }
 
-char b[100];    //不放到全局就会崩溃，为什么？
+char b[100];
 bool islegal(char *num){
+    //char b[100];    //最好放到全局
     double temp;
     sscanf(num,"%lf",&temp);//将num字符串转换为格式lf存到temp里
     sprintf(b,"%.2lf",temp);//将格式化的temp写入字符串b
@@ -25,7 +26,7 @@ bool islegal(char *num){
 }
 
 int main(){
-    freopen("input.txt","r",stdin);
+    //freopen("input.txt","r",stdin);
 
     int n,legal_count;
     double sum;
